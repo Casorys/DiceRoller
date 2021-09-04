@@ -1,6 +1,7 @@
 package com.br.freitastiago.diceroller
 
 import android.graphics.drawable.Drawable
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val mpF = MediaPlayer.create(this, R.raw.fart)
+        val mpB = MediaPlayer.create(this, R.raw.birl)
         /** A linha abaixo importa o Button de um dos nossos layouts **/
         val resultImageView: ImageView = findViewById(R.id.iv_dice)
 
@@ -52,12 +55,14 @@ class MainActivity : AppCompatActivity() {
                     score.text = scoreNumber.toString()
                     failsNumber = 0
                     fails.text = failsNumber.toString()
+                    mpB.start()
                 } else {
                         titleTextView.setBackgroundColor(0xFFeb3d3d.toInt())
                         failsNumber++
                         fails.text = failsNumber.toString()
                         scoreNumber = 0
                     score.text = scoreNumber.toString()
+                    mpF.start()
                     }
             } else {
                 Toast.makeText(this, "Insert a number before rolling!", Toast.LENGTH_SHORT).show()
@@ -73,3 +78,4 @@ class MainActivity : AppCompatActivity() {
 class Dice(private val numSides: Int) {
     fun roll(): Int { return (1..numSides).random() }
 }
+
