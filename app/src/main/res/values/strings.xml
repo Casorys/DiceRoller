@@ -2,4 +2,6 @@
     <string name="app_name">DiceRoller</string>
     <string name="btn_roll_text">Roll</string>
     <string name="tv_guess_the_number">Guess the Number!</string>
+    <string name="in_a_row">In a row</string>
+    <string name="failed_title">Failed</string>
 </resources>
