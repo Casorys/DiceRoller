@@ -17,6 +17,16 @@ class MainActivity : AppCompatActivity() {
     
     var scoreNumber = 0
     var failsNumber = 0
+
+    var numberToBeChecked = 0
+
+    val dice1Keypad = 1
+    val dice2Keypad = 2
+    val dice3Keypad = 3
+    val dice4Keypad = 4
+    val dice5Keypad = 5
+    val dice6Keypad = 6
+
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +35,72 @@ class MainActivity : AppCompatActivity() {
         val mpB = MediaPlayer.create(this, R.raw.birl)
         /** A linha abaixo importa o Button de um dos nossos layouts **/
         val resultImageView: ImageView = findViewById(R.id.iv_dice)
+        val dice1: ImageView = findViewById(R.id.iv_dice1)
+        val dice2: ImageView = findViewById(R.id.iv_dice2)
+        val dice3: ImageView = findViewById(R.id.iv_dice3)
+        val dice4: ImageView = findViewById(R.id.iv_dice4)
+        val dice5: ImageView = findViewById(R.id.iv_dice5)
+        val dice6: ImageView = findViewById(R.id.iv_dice6)
+
+        dice1.setOnClickListener {
+            numberToBeChecked = 1
+            dice1.setBackgroundColor(0xFFd3edc0.toInt())
+            dice2.setBackgroundColor(0xFFffffff.toInt())
+            dice3.setBackgroundColor(0xFFffffff.toInt())
+            dice4.setBackgroundColor(0xFFffffff.toInt())
+            dice5.setBackgroundColor(0xFFffffff.toInt())
+            dice6.setBackgroundColor(0xFFffffff.toInt())
+        }
+
+        dice2.setOnClickListener {
+            numberToBeChecked = 2
+            dice1.setBackgroundColor(0xFFffffff.toInt())
+            dice2.setBackgroundColor(0xFFd3edc0.toInt())
+            dice3.setBackgroundColor(0xFFffffff.toInt())
+            dice4.setBackgroundColor(0xFFffffff.toInt())
+            dice5.setBackgroundColor(0xFFffffff.toInt())
+            dice6.setBackgroundColor(0xFFffffff.toInt())
+        }
+
+        dice3.setOnClickListener {
+            numberToBeChecked = 3
+            dice1.setBackgroundColor(0xFFffffff.toInt())
+            dice2.setBackgroundColor(0xFFffffff.toInt())
+            dice3.setBackgroundColor(0xFFd3edc0.toInt())
+            dice4.setBackgroundColor(0xFFffffff.toInt())
+            dice5.setBackgroundColor(0xFFffffff.toInt())
+            dice6.setBackgroundColor(0xFFffffff.toInt())
+        }
+
+        dice4.setOnClickListener {
+            numberToBeChecked = 4
+            dice1.setBackgroundColor(0xFFffffff.toInt())
+            dice2.setBackgroundColor(0xFFffffff.toInt())
+            dice3.setBackgroundColor(0xFFffffff.toInt())
+            dice4.setBackgroundColor(0xFFd3edc0.toInt())
+            dice5.setBackgroundColor(0xFFffffff.toInt())
+            dice6.setBackgroundColor(0xFFffffff.toInt())
+        }
+
+        dice5.setOnClickListener {
+            numberToBeChecked = 5
+            dice1.setBackgroundColor(0xFFffffff.toInt())
+            dice2.setBackgroundColor(0xFFffffff.toInt())
+            dice3.setBackgroundColor(0xFFffffff.toInt())
+            dice4.setBackgroundColor(0xFFffffff.toInt())
+            dice5.setBackgroundColor(0xFFd3edc0.toInt())
+            dice6.setBackgroundColor(0xFFffffff.toInt())
+        }
+
+        dice6.setOnClickListener {
+            numberToBeChecked = 6
+            dice1.setBackgroundColor(0xFFffffff.toInt())
+            dice2.setBackgroundColor(0xFFffffff.toInt())
+            dice3.setBackgroundColor(0xFFffffff.toInt())
+            dice4.setBackgroundColor(0xFFffffff.toInt())
+            dice5.setBackgroundColor(0xFFffffff.toInt())
+            dice6.setBackgroundColor(0xFFd3edc0.toInt())
+        }
 
 
         resultImageView.setOnClickListener {
@@ -33,11 +109,11 @@ class MainActivity : AppCompatActivity() {
             val fails: TextView = findViewById(R.id.tv_fail)
             val nullCheck: TextInputEditText = findViewById(R.id.ti_nullCheck)
             val titleTextView: TextView = findViewById(R.id.tv_guess)
-            val luckyNumberTI: TextInputEditText = findViewById(R.id.ti_luckynumber)
-            val luckyNumber: String = luckyNumberTI.text.toString()
+            // val luckyNumberTI: TextInputEditText = findViewById(R.id.ti_luckynumber)
+            // val luckyNumber: String = luckyNumberTI.text.toString()
             val dice = Dice(6)
 
-            if (luckyNumber != nullCheck.text.toString()) {
+            if (numberToBeChecked != 0) {
                 val diceRoll = dice.roll()
                 /** A linha abaixo altera propriedades da TextView que importamos para a
                  * variavel resultTextView **/
@@ -49,13 +125,20 @@ class MainActivity : AppCompatActivity() {
                     5 -> resultImageView.setImageResource(R.drawable.dice_5)
                     6 -> resultImageView.setImageResource(R.drawable.dice_6)
                 }
-                if (diceRoll == luckyNumber.toInt()) {
+                if (diceRoll == numberToBeChecked) {
                     titleTextView.setBackgroundColor(0xFF2fa851.toInt())
                     scoreNumber++
                     score.text = scoreNumber.toString()
                     failsNumber = 0
                     fails.text = failsNumber.toString()
                     mpB.start()
+                    numberToBeChecked = 0
+                    dice1.setBackgroundColor(0xFFffffff.toInt())
+                    dice2.setBackgroundColor(0xFFffffff.toInt())
+                    dice3.setBackgroundColor(0xFFffffff.toInt())
+                    dice4.setBackgroundColor(0xFFffffff.toInt())
+                    dice5.setBackgroundColor(0xFFffffff.toInt())
+                    dice6.setBackgroundColor(0xFFffffff.toInt())
                 } else {
                         titleTextView.setBackgroundColor(0xFFeb3d3d.toInt())
                         failsNumber++
@@ -63,6 +146,13 @@ class MainActivity : AppCompatActivity() {
                         scoreNumber = 0
                     score.text = scoreNumber.toString()
                     mpF.start()
+                    numberToBeChecked = 0
+                    dice1.setBackgroundColor(0xFFffffff.toInt())
+                    dice2.setBackgroundColor(0xFFffffff.toInt())
+                    dice3.setBackgroundColor(0xFFffffff.toInt())
+                    dice4.setBackgroundColor(0xFFffffff.toInt())
+                    dice5.setBackgroundColor(0xFFffffff.toInt())
+                    dice6.setBackgroundColor(0xFFffffff.toInt())
                     }
             } else {
                 Toast.makeText(this, "Insert a number before rolling!", Toast.LENGTH_SHORT).show()
