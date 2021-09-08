@@ -1,16 +1,13 @@
 package com.br.freitastiago.diceroller
 
-import android.graphics.drawable.Drawable
+
+import android.graphics.Color
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.SoundEffectConstants
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.graphics.toColor
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
@@ -45,60 +42,60 @@ class MainActivity : AppCompatActivity() {
         dice1.setOnClickListener {
             numberToBeChecked = 1
             dice1.setBackgroundColor(0xFFd3edc0.toInt())
-            dice2.setBackgroundColor(0xFFffffff.toInt())
-            dice3.setBackgroundColor(0xFFffffff.toInt())
-            dice4.setBackgroundColor(0xFFffffff.toInt())
-            dice5.setBackgroundColor(0xFFffffff.toInt())
-            dice6.setBackgroundColor(0xFFffffff.toInt())
+            dice2.setBackgroundColor(Color.TRANSPARENT)
+            dice3.setBackgroundColor(Color.TRANSPARENT)
+            dice4.setBackgroundColor(Color.TRANSPARENT)
+            dice5.setBackgroundColor(Color.TRANSPARENT)
+            dice6.setBackgroundColor(Color.TRANSPARENT)
         }
 
         dice2.setOnClickListener {
             numberToBeChecked = 2
-            dice1.setBackgroundColor(0xFFffffff.toInt())
+            dice1.setBackgroundColor(Color.TRANSPARENT)
             dice2.setBackgroundColor(0xFFd3edc0.toInt())
-            dice3.setBackgroundColor(0xFFffffff.toInt())
-            dice4.setBackgroundColor(0xFFffffff.toInt())
-            dice5.setBackgroundColor(0xFFffffff.toInt())
-            dice6.setBackgroundColor(0xFFffffff.toInt())
+            dice3.setBackgroundColor(Color.TRANSPARENT)
+            dice4.setBackgroundColor(Color.TRANSPARENT)
+            dice5.setBackgroundColor(Color.TRANSPARENT)
+            dice6.setBackgroundColor(Color.TRANSPARENT)
         }
 
         dice3.setOnClickListener {
             numberToBeChecked = 3
-            dice1.setBackgroundColor(0xFFffffff.toInt())
-            dice2.setBackgroundColor(0xFFffffff.toInt())
+            dice1.setBackgroundColor(Color.TRANSPARENT)
+            dice2.setBackgroundColor(Color.TRANSPARENT)
             dice3.setBackgroundColor(0xFFd3edc0.toInt())
-            dice4.setBackgroundColor(0xFFffffff.toInt())
-            dice5.setBackgroundColor(0xFFffffff.toInt())
-            dice6.setBackgroundColor(0xFFffffff.toInt())
+            dice4.setBackgroundColor(Color.TRANSPARENT)
+            dice5.setBackgroundColor(Color.TRANSPARENT)
+            dice6.setBackgroundColor(Color.TRANSPARENT)
         }
 
         dice4.setOnClickListener {
             numberToBeChecked = 4
-            dice1.setBackgroundColor(0xFFffffff.toInt())
-            dice2.setBackgroundColor(0xFFffffff.toInt())
-            dice3.setBackgroundColor(0xFFffffff.toInt())
+            dice1.setBackgroundColor(Color.TRANSPARENT)
+            dice2.setBackgroundColor(Color.TRANSPARENT)
+            dice3.setBackgroundColor(Color.TRANSPARENT)
             dice4.setBackgroundColor(0xFFd3edc0.toInt())
-            dice5.setBackgroundColor(0xFFffffff.toInt())
-            dice6.setBackgroundColor(0xFFffffff.toInt())
+            dice5.setBackgroundColor(Color.TRANSPARENT)
+            dice6.setBackgroundColor(Color.TRANSPARENT)
         }
 
         dice5.setOnClickListener {
             numberToBeChecked = 5
-            dice1.setBackgroundColor(0xFFffffff.toInt())
-            dice2.setBackgroundColor(0xFFffffff.toInt())
-            dice3.setBackgroundColor(0xFFffffff.toInt())
-            dice4.setBackgroundColor(0xFFffffff.toInt())
+            dice1.setBackgroundColor(Color.TRANSPARENT)
+            dice2.setBackgroundColor(Color.TRANSPARENT)
+            dice3.setBackgroundColor(Color.TRANSPARENT)
+            dice4.setBackgroundColor(Color.TRANSPARENT)
             dice5.setBackgroundColor(0xFFd3edc0.toInt())
-            dice6.setBackgroundColor(0xFFffffff.toInt())
+            dice6.setBackgroundColor(Color.TRANSPARENT)
         }
 
         dice6.setOnClickListener {
             numberToBeChecked = 6
-            dice1.setBackgroundColor(0xFFffffff.toInt())
-            dice2.setBackgroundColor(0xFFffffff.toInt())
-            dice3.setBackgroundColor(0xFFffffff.toInt())
-            dice4.setBackgroundColor(0xFFffffff.toInt())
-            dice5.setBackgroundColor(0xFFffffff.toInt())
+            dice1.setBackgroundColor(Color.TRANSPARENT)
+            dice2.setBackgroundColor(Color.TRANSPARENT)
+            dice3.setBackgroundColor(Color.TRANSPARENT)
+            dice4.setBackgroundColor(Color.TRANSPARENT)
+            dice5.setBackgroundColor(Color.TRANSPARENT)
             dice6.setBackgroundColor(0xFFd3edc0.toInt())
         }
 
@@ -133,12 +130,12 @@ class MainActivity : AppCompatActivity() {
                     fails.text = failsNumber.toString()
                     mpB.start()
                     numberToBeChecked = 0
-                    dice1.setBackgroundColor(0xFFffffff.toInt())
-                    dice2.setBackgroundColor(0xFFffffff.toInt())
-                    dice3.setBackgroundColor(0xFFffffff.toInt())
-                    dice4.setBackgroundColor(0xFFffffff.toInt())
-                    dice5.setBackgroundColor(0xFFffffff.toInt())
-                    dice6.setBackgroundColor(0xFFffffff.toInt())
+                    dice1.setBackgroundColor(Color.TRANSPARENT)
+                    dice2.setBackgroundColor(Color.TRANSPARENT)
+                    dice3.setBackgroundColor(Color.TRANSPARENT)
+                    dice4.setBackgroundColor(Color.TRANSPARENT)
+                    dice5.setBackgroundColor(Color.TRANSPARENT)
+                    dice6.setBackgroundColor(Color.TRANSPARENT)
                 } else {
                         titleTextView.setBackgroundColor(0xFFeb3d3d.toInt())
                         failsNumber++
@@ -147,15 +144,15 @@ class MainActivity : AppCompatActivity() {
                     score.text = scoreNumber.toString()
                     mpF.start()
                     numberToBeChecked = 0
-                    dice1.setBackgroundColor(0xFFffffff.toInt())
-                    dice2.setBackgroundColor(0xFFffffff.toInt())
-                    dice3.setBackgroundColor(0xFFffffff.toInt())
-                    dice4.setBackgroundColor(0xFFffffff.toInt())
-                    dice5.setBackgroundColor(0xFFffffff.toInt())
-                    dice6.setBackgroundColor(0xFFffffff.toInt())
+                    dice1.setBackgroundColor(Color.TRANSPARENT)
+                    dice2.setBackgroundColor(Color.TRANSPARENT)
+                    dice3.setBackgroundColor(Color.TRANSPARENT)
+                    dice4.setBackgroundColor(Color.TRANSPARENT)
+                    dice5.setBackgroundColor(Color.TRANSPARENT)
+                    dice6.setBackgroundColor(Color.TRANSPARENT)
                     }
             } else {
-                Toast.makeText(this, "Insert a number before rolling!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Select a number before rolling!", Toast.LENGTH_SHORT).show()
             }
 
         }
